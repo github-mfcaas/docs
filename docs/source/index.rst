@@ -10,3 +10,7 @@ MFCaaS API Documentation
 Contents
 --------
 
+.. toctree::
+
+   usage
+   api
