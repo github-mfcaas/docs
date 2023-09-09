@@ -1,7 +1,7 @@
 MFCaaS API Documentation
 ========================
 
-**M**anaged **F**ile **C**ompression as a **S**ervice
+*M*anaged *F*ile *C*ompression as a *S*ervice
 
 .. note::
 
