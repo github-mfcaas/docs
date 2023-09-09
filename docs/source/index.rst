@@ -1,7 +1,7 @@
 MFCaaS API Documentation
 ========================
 
-*M*anaged *F*ile *C*ompression as a *S*ervice
+Managed File Compression as a Service
 
 .. note::
 
@@ -10,7 +10,7 @@ MFCaaS API Documentation
 Contents
 --------
 
-* Compress a file:   
+Compress a file:
    Required arguments
       ext
          string: oneof ("gz", "zip")
@@ -20,7 +20,7 @@ Contents
             depending on the extension supplied above the system will create a .zip or a .tar.gz file
 
 
-* Code Examples
+Code Examples
 
 .. code-block::
    :caption CURL
