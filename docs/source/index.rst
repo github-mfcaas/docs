@@ -68,9 +68,8 @@ Code Examples
 
 
 
-.. code-block:: json
-	:caption: GetStatus
-	http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+.. code-block:: json	
+	:caption: GetStatus - GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
 
 	{
 		"body": {
