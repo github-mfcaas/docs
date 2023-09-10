@@ -22,7 +22,7 @@ Code Examples
 -------------
 
 .. code-block::
-   :caption CURL
+   :caption: CURL
       curl --location 'http://my-server/compress' \
       --form 'files=@"/C:/data/large-file.txt"' \
       --form 'ext="zip"'
@@ -30,7 +30,7 @@ Code Examples
 
 
 .. code-block::
-   :caption C# RestSharp
+   :caption: C# RestSharp
       var client = new RestClient();
       var request = new RestRequest("http://my-server/compress", Method.Post);
       request.AlwaysMultipartFormData = true;
@@ -42,7 +42,7 @@ Code Examples
 
 
 .. code-block::
-   :caption Response
+   :caption: Response
       {
           "body": {
               "ext": "zip",
@@ -64,7 +64,7 @@ Code Examples
 
 
 .. code-block::
-   :caption GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+   :caption: GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
       {
           "body": {
               "datecreated": "2023-09-09 23:33:14",
