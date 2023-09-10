@@ -56,7 +56,9 @@ RestSharp
 ``
 
 
-:Response:
+Response
+--------
+``
       {
           "body": {
               "ext": "zip",
@@ -72,13 +74,14 @@ RestSharp
           },
           "status_code": 200
       }
+``
 
 
 
 
-
-.. code-block::
-   :caption: GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+--------------------------------------------------------------------------
+``
       {
           "body": {
               "datecreated": "2023-09-09 23:33:14",
@@ -98,3 +101,4 @@ RestSharp
           },
           "status_code": 200
       }
+``
