@@ -32,11 +32,11 @@ Code Examples
 
 
 
-CURL
-----
-``
-   curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="zip"'
-``
+curl
+ curl --location 'http://my-server/compress' \
+ --form 'files=@"/C:/data/large-file.txt"' \
+ --form 'ext="zip"'
+
 
 
 
@@ -47,11 +47,17 @@ RestSharp
 ---------
 ``
       var client = new RestClient();
+
       var request = new RestRequest("http://my-server/compress", Method.Post);
+
       request.AlwaysMultipartFormData = true;
+
       request.AddFile("files", "/C:/data/large-file.txt");
+
       request.AddParameter("ext", "zip");
+
       RestResponse response = await client.ExecuteAsync(request);
+
       Console.WriteLine(response.Content);
 ``
 
@@ -79,8 +85,10 @@ Response
 
 
 
-GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+Get Status
 --------------------------------------------------------------------------
+
+ GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
 ``
       {
           "body": {
