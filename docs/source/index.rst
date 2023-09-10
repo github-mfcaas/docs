@@ -12,11 +12,14 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 .. note::
 
 	This project is under active development.
+
 	Hosting on Google Cloud, and Microsoft Azure coming soon.
+
 	7-Zip compression coming soon.
    
 .. note::
 	POSTMAN collection
+
 	https://documenter.getpostman.com/view/29636424/2s9YC1XEzj
 
 Compress a file:
