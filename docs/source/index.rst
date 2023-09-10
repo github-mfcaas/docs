@@ -24,38 +24,64 @@ Code Examples
 
 .. code-block::
    :caption CURL
-   curl --location 'http://my-server/compress' \
-   --form 'files=@"/C:/data/large-file.txt"' \
-   --form 'ext="zip"'
+      curl --location 'http://my-server/compress' \
+      --form 'files=@"/C:/data/large-file.txt"' \
+      --form 'ext="zip"'
 
 
 
 .. code-block::
    :caption C# RestSharp
-   var client = new RestClient();
-   var request = new RestRequest("http://my-server/compress", Method.Post);
-   request.AlwaysMultipartFormData = true;
-   request.AddFile("files", "/C:/data/large-file.txt");
-   request.AddParameter("ext", "zip");
-   RestResponse response = await client.ExecuteAsync(request);
-   Console.WriteLine(response.Content);
+      var client = new RestClient();
+      var request = new RestRequest("http://my-server/compress", Method.Post);
+      request.AlwaysMultipartFormData = true;
+      request.AddFile("files", "/C:/data/large-file.txt");
+      request.AddParameter("ext", "zip");
+      RestResponse response = await client.ExecuteAsync(request);
+      Console.WriteLine(response.Content);
 
 
 
 .. code-block::
    :caption Response
-   {
-       "body": {
-           "ext": "zip",
-           "files": [
-               "licensee_profile.txt"
-           ],
-           "status": "QUEUED",
-           "status_url": "http://10.0.0.109/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
-           "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
-       },
-       "headers": {
-           "content-type": "application/json"
-       },
-       "status_code": 200
-   }
+      {
+          "body": {
+              "ext": "zip",
+              "files": [
+                  "large-file.txt"
+              ],
+              "status": "QUEUED",
+              "status_url": "http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
+              "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
+          },
+          "headers": {
+              "content-type": "application/json"
+          },
+          "status_code": 200
+      }
+
+
+
+
+
+.. code-block::
+   :caption GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+      {
+          "body": {
+              "datecreated": "2023-09-09 23:33:14",
+              "download_url": "http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
+              "ext": "zip",
+              "files": [
+                  {
+                      "filename": "large-file.txt",
+                      "id": 430537
+                  }
+              ],
+              "status": "COMPLETED",
+              "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
+          },
+          "headers": {
+              "content-type": "application/json"
+          },
+          "status_code": 200
+      }
