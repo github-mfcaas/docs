@@ -5,7 +5,7 @@ Managed File Compression as a Service
 
 Do your systems generate 100's or 1000's of log files?
 
-Use our cloud-first approach to file compression by offloading the high CPU and Ram requirements to our servers or a cluster of servers. Let us worry about file compression so you can get back to your business.
+Use our cloud-first approach to file compression by offloading the high CPU and Ram requirements to our system with a single server setup or a cluster of servers. Let us worry about file compression so you can get back to your business.
 
 
 
@@ -13,7 +13,7 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 
 	This project is under active development.
 	Hosting on Google Cloud, and Microsoft Azure coming soon.
-	7-Zip, xz, BZip2, ZST, and Brotli compression types coming soon.
+	7-Zip compression coming soon.
    
 
 
@@ -21,11 +21,9 @@ Compress a file:
 ---------------
    Required arguments
       ext
-         string: oneof ("gz", "zip")
-            other compression types coming soon
+         string: oneof ("gz", "zip", "zst", "br", "xz", "bz2")
       files
          one or more files to compress
-            depending on the extension supplied above, the system will create a .zip or a .tar.gz of your files.
 
 
 
@@ -92,3 +90,13 @@ Code Examples
 		},
 		"status_code": 200
 	}
+
+
+
+.. parsed-literal::
+
+	Fetch your compressed files
+
+	GET http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+
+	Returns an application/octet-stream
