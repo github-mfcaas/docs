@@ -11,11 +11,9 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 
 .. note::
 
-	This project is under active development.
-
-	Hosting on Google Cloud, and Microsoft Azure coming soon.
-
-	7-Zip compression coming soon.
+	* This project is under active development.
+	* Hosting on Google Cloud, and Microsoft Azure coming soon.
+	* 7-Zip compression coming soon.
    
 .. note::
 	POSTMAN collection
