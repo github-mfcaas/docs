@@ -5,13 +5,15 @@ Managed File Compression as a Service
 
 Do your systems generate 100's or 1000's of log files?
 
-Use our cloud-first approach to file compression and offload the high CPU and Ram requirements to us. Spin up your own server or cluster of servers and start sending requests. Backed by Amazon AWS, Google Cloud, and MS Azure coming soon!
+Use our cloud-first approach to file compression by offloading the high CPU and Ram requirements to our servers or a cluster of servers. Let us worry about file compression so you can get back to your business.
 
 
 
 .. note::
 
-   This project is under active development.
+	This project is under active development.
+	Hosting on Google Cloud, and Microsoft Azure coming soon.
+	7-Zip, xz, BZip2, ZST, and Brotli compression types coming soon.
    
 
 
