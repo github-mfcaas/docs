@@ -14,6 +14,7 @@ Use our cloud-first approach to file compression and offload the high CPU and Ra
    This project is under active development.
    
 
+
 Compress a file:
 ---------------
    Required arguments
@@ -26,29 +27,25 @@ Compress a file:
 
 
 
-
-
-
-
-
-
-
 Code Examples
 -------------
 
 
+
 CURL
 ----
-      ``sh
-         curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="zip"'
-      ``
+``
+   curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="zip"'
+``
 
 
 
 
 
 
-RestSharp::
+RestSharp
+---------
+``
       var client = new RestClient();
       var request = new RestRequest("http://my-server/compress", Method.Post);
       request.AlwaysMultipartFormData = true;
@@ -56,7 +53,7 @@ RestSharp::
       request.AddParameter("ext", "zip");
       RestResponse response = await client.ExecuteAsync(request);
       Console.WriteLine(response.Content);
-
+``
 
 
 :Response:
