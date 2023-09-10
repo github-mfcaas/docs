@@ -7,10 +7,8 @@ Managed File Compression as a Service
 
    This project is under active development.
 
-Contents
---------
-
 Compress a file:
+---------------
    Required arguments
       ext
          string: oneof ("gz", "zip")
@@ -21,6 +19,7 @@ Compress a file:
 
 
 Code Examples
+-------------
 
 .. code-block::
    :caption CURL
