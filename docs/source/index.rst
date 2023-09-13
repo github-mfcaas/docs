@@ -11,93 +11,64 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 
 .. note::
 
-	* This project is under active development.
-	* Hosting on Google Cloud, and Microsoft Azure coming soon.
-	* 7-Zip compression coming soon.
+    * This project is under active development.
+    * Hosting on Google Cloud, and Microsoft Azure coming soon.
+    * 7-Zip compression coming soon.
 
 
 .. note::
-	POSTMAN collection
+    POSTMAN collection
 
-	https://documenter.getpostman.com/view/29636424/2s9YC1XEzj
+        https://documenter.getpostman.com/view/29636424/2s9YC1XEzj
 
 
 Compress a file:
 ---------------
-   Required arguments
-      ext
-         string: oneof ("gz", "zip", "zst", "br", "xz", "bz2")
-      files
-         one or more files to compress
+
+Required arguments
+
+* ext
+   * string: oneof ("gz", "zip", "zst", "br", "xz", "bz2")
+* files
+   * one or more files to compress
 
 Code Examples
 -------------
 
+.. code-block:: console
+
+   $ curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="zip"' 
+
+OR
 
 .. code-block:: console
-	$ curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="zip"' 
-	
-	$ curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="gz"' 
+
+   $ curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="gz"' 
 
 
 .. code-block:: json
-	:caption: Response
+   :caption: Response
 
-	{
-		"body": {
-			"ext": "zip",
-			"files": [
-				"large-file.txt"
-			],
-			"status": "QUEUED",
-			"status_url": "http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
-			"taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
-		},
-		"headers": {
-			"content-type": "application/json"
-		},
-		"status_code": 200
-	}
+   {"body": {"ext": "zip", "files": ["large-file.txt"], "status": "QUEUED", "status_url": "http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda", "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda" }, "headers": {"content-type": "application/json"}, "status_code": 200}
+
 
 
 .. code-block:: json	
-	:caption: GetStatus - GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+   :caption: GetStatus - GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
 
-	{
-		"body": {
-			"datecreated": "2023-09-09 23:33:14",
-			"download_url": "http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
-			"ext": "zip",
-			"files": [
-					{
-						"filename": "large-file.txt",
-						"id": 430537
-					}
-			],
-			"status": "COMPLETED",
-			"taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
-		},
-		"headers": {
-			"content-type": "application/json"
-		},
-		"status_code": 200
-	}
+   {"body": {"datecreated": "2023-09-09 23:33:14", "download_url": "http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda", "ext": "zip", "files": [{"filename": "large-file.txt","id": 430537}], "status": "COMPLETED", "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"}, "headers": {"content-type": "application/json"}, "status_code": 200}
+
 
 .. parsed-literal::
 
-	Fetch your compressed files
+    Fetch your compressed files
 
-	GET http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
+    GET http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
 
-	Returns an application/octet-stream
+    Returns an application/octet-stream
 
 .. raw:: html
-	<p></p>
-	<p></p>
 	<video width="320" height="240" controls>
-		<source src="https://github.com/github-mfcaas/docs/blob/main/docs/source/Compress-Request.mp4" type="video/mp4">
+		<source src="https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.mp4" type="video/mp4">
  		Your browser does not support the video tag.
 	</video>
-	<p></p>
-	<p></p>
-
