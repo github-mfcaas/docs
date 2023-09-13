@@ -10,6 +10,15 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 .. raw:: html
 	<p>&nbsp;</p>
 	<p>&nbsp;</p>
+	<video width="320" height="240" controls>
+		<source src="https://github.com/github-mfcaas/docs/blob/main/docs/source/Compress-Request.mp4" type="video/mp4"/>
+ 		Your browser does not support the video tag.
+	</video>
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+.. raw:: html
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
 
 .. note::
 
