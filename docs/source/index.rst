@@ -21,6 +21,11 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 
         https://documenter.getpostman.com/view/29636424/2s9YC1XEzj
 
+.. note::
+   Explainer video
+
+      https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.mp4
+
 
 Compress a file:
 ---------------
@@ -37,26 +42,61 @@ Code Examples
 
 .. code-block:: console
 
-   $ curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="zip"' 
+   $ curl --location 'http://my-server/compress' \\
+   --form 'files=@"/C:/data/large-file.txt"' \\
+   --form 'ext="zip"' 
 
 OR
 
 .. code-block:: console
 
-   $ curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="gz"' 
+   $ curl --location 'http://my-server/compress' \\
+      --form 'files=@"/C:/data/large-file.txt"' \\
+      --form 'ext="gz"' 
 
 
 .. code-block:: json
    :caption: Response
 
-   {"body": {"ext": "zip", "files": ["large-file.txt"], "status": "QUEUED", "status_url": "http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda", "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda" }, "headers": {"content-type": "application/json"}, "status_code": 200}
-
+   {
+      "body": {
+         "ext": "zip",
+         "files": [
+            "large-file.txt"
+         ],
+         "status": "QUEUED",
+         "status_url": "http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
+         "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
+      },
+      "headers": {
+         "content-type": "application/json"
+      },
+      "status_code": 200
+   }
 
 
 .. code-block:: json	
    :caption: GetStatus - GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
 
-   {"body": {"datecreated": "2023-09-09 23:33:14", "download_url": "http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda", "ext": "zip", "files": [{"filename": "large-file.txt","id": 430537}], "status": "COMPLETED", "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"}, "headers": {"content-type": "application/json"}, "status_code": 200}
+   {
+      "body": {
+         "datecreated": "2023-09-09 23:33:14",
+         "download_url": "http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
+         "ext": "zip",
+         "files": [
+            {
+               "filename": "large-file.txt",
+               "id": 430537
+            }
+         ],
+         "status": "COMPLETED",
+         "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
+      },
+      "headers": {
+         "content-type": "application/json"
+      },
+      "status_code": 200
+   }   
 
 
 .. parsed-literal::
@@ -65,10 +105,4 @@ OR
 
     GET http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
 
-    Returns an application/octet-stream
-
-.. raw:: html
-	<video width="320" height="240" controls>
-		<source src="https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.mp4" type="video/mp4">
- 		Your browser does not support the video tag.
-	</video>
+    Returns an application/octet-stream, application/x-zip, etc.
