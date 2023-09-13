@@ -7,18 +7,28 @@ Do your systems generate 100's or 1000's of log files?
 
 Use our cloud-first approach to file compression by offloading the high CPU and Ram requirements to our system with a single server setup or a cluster of servers. Let us worry about file compression so you can get back to your business.
 
-
+.. raw:: html
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
 
 .. note::
 
 	* This project is under active development.
 	* Hosting on Google Cloud, and Microsoft Azure coming soon.
 	* 7-Zip compression coming soon.
-   
+
+.. raw:: html
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
+
 .. note::
 	POSTMAN collection
 
 	https://documenter.getpostman.com/view/29636424/2s9YC1XEzj
+
+.. raw:: html
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
 
 Compress a file:
 ---------------
@@ -28,7 +38,9 @@ Compress a file:
       files
          one or more files to compress
 
-
+.. raw:: html
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
 
 Code Examples
 -------------
@@ -45,9 +57,9 @@ Code Examples
 		--form 'files=@"/C:/data/large-file.txt"' \\ 
 		--form 'ext="gz"' 
 
-
-
-
+.. raw:: html
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
 
 .. code-block:: json
 	:caption: Response
@@ -68,8 +80,9 @@ Code Examples
 		"status_code": 200
 	}
 
-
-
+.. raw:: html
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
 
 .. code-block:: json	
 	:caption: GetStatus - GET http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
@@ -94,7 +107,9 @@ Code Examples
 		"status_code": 200
 	}
 
-
+.. raw:: html
+	<p>&nbsp;</p>
+	<p>&nbsp;</p>
 
 .. parsed-literal::
 
