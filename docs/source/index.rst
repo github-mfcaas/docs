@@ -3,9 +3,9 @@ MFCaaS API Documentation
 
 Managed File Compression as a Service
 
-Do your systems generate 100's or 1000's of log files?
+Do your systems generate 100's, or 1000's of log files?
 
-Use our cloud-first approach to file compression by offloading the high CPU and Ram requirements to our system with a single server setup or a cluster of servers. Let us worry about file compression so you can get back to your business.
+Use our cloud-first approach to file compression by offloading the high CPU and Ram requirements to our systems with either a single server or a cluster of servers. Let us worry about file compression so your servers can get back to your business.
 
 .. raw:: html
 	<p>&nbsp;</p>
