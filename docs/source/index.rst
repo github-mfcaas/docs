@@ -1,7 +1,9 @@
 MFCaaS API Documentation
 ========================
 
-**Managed File Compression as a Service**
+*************************************
+*Managed File Compression as a Service*
+*************************************
 
 Do your systems generate 100's, or 1000's of log files?
 
@@ -52,16 +54,10 @@ Code Examples
 -------------
 
 
-.. parsed-literal::
-	**CURL**
-
-	curl --location 'http://my-server/compress' \\ 
-		--form 'files=@"/C:/data/large-file.txt"' \\ 
-		--form 'ext="zip"' 
+.. code-block:: console
+	$ curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="zip"' 
 	
-	curl --location 'http://my-server/compress' \\ 
-		--form 'files=@"/C:/data/large-file.txt"' \\ 
-		--form 'ext="gz"' 
+	$ curl --location 'http://my-server/compress' --form 'files=@"/C:/data/large-file.txt"' --form 'ext="gz"' 
 
 .. raw:: html
 	<p></p>
