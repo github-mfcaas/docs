@@ -30,10 +30,6 @@ Compress a file:
       files
          one or more files to compress
 
-.. raw:: html
-	<p></p>
-	<p></p>
-
 Code Examples
 -------------
 
