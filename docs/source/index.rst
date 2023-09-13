@@ -21,10 +21,9 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 
         https://documenter.getpostman.com/view/29636424/2s9YC1XEzj
 
-.. note::
-   Explainer video (26s no audio)
 
-      https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.mp4
+.. raw:: html
+<video controls src="https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.mp4"></video
 
 
 Compress a file:
