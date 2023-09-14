@@ -10,6 +10,8 @@ Do your systems generate 100's, or 1000's of log files?
 
 Use our cloud-first approach to file compression by offloading the high CPU and Ram requirements to our systems with either a single server or a cluster of servers. Let us worry about file compression so your servers can get back to your business.
 
+
+
 .. note::
 
     * This project is under active development.
@@ -22,11 +24,10 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 
         https://documenter.getpostman.com/view/29636424/2s9YC1XEzj
 
+**Explainer Video**
 
-.. raw:: html
-    Explainer Video
-
-    <video controls src="https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.mp4"></video>
+.. image:: https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.gif
+   :alt: Explainer Video
 
 
 ---------------
