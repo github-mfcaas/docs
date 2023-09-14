@@ -1,9 +1,10 @@
+========================
 MFCaaS API Documentation
 ========================
 
-*************************************
+---------------------------------------
 *Managed File Compression as a Service*
-*************************************
+---------------------------------------
 
 Do your systems generate 100's, or 1000's of log files?
 
@@ -17,15 +18,18 @@ Use our cloud-first approach to file compression by offloading the high CPU and 
 
 
 .. note::
-    POSTMAN collection
+    POSTMAN Collection
 
         https://documenter.getpostman.com/view/29636424/2s9YC1XEzj
 
 
 .. raw:: html
-<video controls src="https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.mp4"></video>
+    Explainer Video
+
+    <video controls src="https://github.com/github-mfcaas/docs/raw/main/docs/source/Compress-Request.mp4"></video>
 
 
+---------------
 Compress a file:
 ---------------
 
@@ -39,18 +43,11 @@ Required arguments
 Code Examples
 -------------
 
-.. code-block:: console
-
-   $ curl --location 'http://my-server/compress' \\
-   --form 'files=@"/C:/data/large-file.txt"' \\
-   --form 'ext="zip"' 
-
-OR
 
 .. code-block:: console
 
-   $ curl --location 'http://my-server/compress' \\
-      --form 'files=@"/C:/data/large-file.txt"' \\
+   $ curl --location 'http://my-server/compress' \
+      --form 'files=@"/C:/data/large-file.txt"' \
       --form 'ext="gz"' 
 
 
