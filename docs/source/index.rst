@@ -66,8 +66,9 @@ Required arguments
    * string: oneof ("gz", "zip", "zst", "br", "xz", "bz2")
 * files
    * one or more files to compress
-
-
+      * files can be a single http or https url
+      * OR
+      * files may be one or more form file posts
    
    
    
@@ -76,11 +77,40 @@ Required arguments
 Code Examples
 -------------
 
+* Files for Testing
+   * https://gist.githubusercontent.com/github-mfcaas/8a380858c471640210844f5412d0de3a/raw/a9a39202736e9fd0772efc2ad70b8b6f38b9595d/access_log_20230916-114309.log
+      * 220 kB
+   * https://gist.githubusercontent.com/github-mfcaas/dc5c59f4151ba5a1eabcde92a7c5001e/raw/cb279dfcf5b0d6936f7dc0a49ccf2399ba04199f/access_log_20230916-114317.log
+      * 22 MB
+   * https://gist.githubusercontent.com/github-mfcaas/31d4e181b3a3d51bcb306c6d5262e007/raw/8209bdd1d0c3fb98db0a89281d73e1074c8b82a3/access_log_20230916-114456.log
+      * 44 MB
+   * https://gist.github.com/github-mfcaas
+      * All test files
+
+
 .. code-block:: console
 
    $ curl --location 'http://my-server/compress' \
       --form 'files=@"/C:/data/large-file.txt"' \
       --form 'ext="gz"' 
+
+
+   $ curl --location 'http://my-server/compress' \
+      --form 'files=@"/C:/data/large-file.txt"' \
+      --form 'ext="zip"' 
+
+
+
+   $ curl --location 'http://my-server/compress' \
+      --form 'files=@"/C:/data/large-file.txt"' \
+      --form 'files=@"/C:/data/medium-size-file.txt"' \
+      --form 'ext="gz"' 
+
+
+   $ curl --location 'http://my-server/compress' \
+      --form 'files=@"/C:/data/large-file.txt"' \
+      --form 'files=@"/C:/data/medium-size-file.txt"' \
+      --form 'ext="zip"' 
 
 
    
@@ -96,6 +126,23 @@ Code Examples
          "ext": "zip",
          "files": [
             "large-file.txt"
+         ],
+         "status": "QUEUED",
+         "status_url": "http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
+         "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
+      },
+      "headers": {
+         "content-type": "application/json"
+      },
+      "status_code": 200
+   }
+
+   {
+      "body": {
+         "ext": "zip",
+         "files": [
+            "large-file.txt",
+            "medium-size-file.txt"
          ],
          "status": "QUEUED",
          "status_url": "http://my-server/getstatus?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
@@ -137,6 +184,28 @@ Code Examples
    }
 
 
+   {
+      "body": {
+         "datecreated": "2023-09-09 23:33:14",
+         "download_url": "http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda",
+         "ext": "zip",
+         "files": [
+            {
+               "filename": "large-file.txt",
+               "filename": "medium-size-file.txt",
+               "id": 430537
+            }
+         ],
+         "status": "COMPLETED",
+         "taskid": "5a1696e5-d01e-4bc6-85b8-23af3f5febda"
+      },
+      "headers": {
+         "content-type": "application/json"
+      },
+      "status_code": 200
+   }
+
+
    
    
    
@@ -148,4 +217,4 @@ Code Examples
 
     GET http://my-server/getcompletedtask?taskid=5a1696e5-d01e-4bc6-85b8-23af3f5febda
 
-    Returns an application/octet-stream, application/x-zip, etc.
+    Returns an application/octet-stream, application/x-zip, application/gzip etc.
